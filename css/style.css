@@ -1,0 +1,439 @@
+:root {
+  --primary: #1794db;
+
+  --bg: #e5edf3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(229, 237, 243, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #000000;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-extra a {
+  color: #000000;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('../img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 237, 243, 0) 0%,     /* transparan di atas */
+    rgba(229, 237, 243, 0.3) 65%,  /* mulai muncul di tengah */
+    rgba(229, 237, 243, 0.8) 100%  /* tebal di bawah */
+  );
+  z-index: -1;
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.7rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #000000;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* About Section */
+.about, .alat, .contact {
+  padding: 8rem 7% 1.4rem;
+  color: #000;
+}
+
+.about h2, .alat h2, .contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span, .alat h2 span, .contact h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 50%;
+   max-width: 600px;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Alat Section */
+
+.alat h2, .contact p {
+  margin-bottom: 1rem;
+}
+
+.alat p, .contact p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 300;
+  line-height: 1.6;
+
+}
+
+.alat-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 80px; /* Tambahan ini untuk menurunkan posisi */
+  background-image: url('../img/alat-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 60px 30px; /* Biar isi nggak terlalu nempel ke tepi */
+  border-radius: 16px; /* Opsional jika ingin sudut melengkung */
+}
+
+.alat-card {
+  background: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.alat-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.alat-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
+  color: #555;
+}
+
+/* Contact Section */
+.contact {
+  padding-bottom: 6rem; /* memberi jarak dengan footer */
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  background-color: #1794db;
+  height: 300px;
+}
+
+.contact .row .map {
+  flex: 1 1 50%;
+  height: 100%;
+}
+
+.contact .row .map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contact .row form {
+  flex: 1 1 50%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem; /* beri jarak dari footer */
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0;
+  border: 1px solid #000;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+}
+
+.contact .row form .input-group i {
+  margin-right: 10px;
+  color: #333;
+}
+
+.contact .row form .input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+}
+
+.contact .row form .btn {
+  padding: 0.75rem;
+  background-color: #fff;
+  border: none;
+  color: #1794db;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact .row form .btn:hover {
+  background-color: #ddd;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,footer .links a:hover {
+  color: #000;
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #000000;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+    .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0,2);
+  }
+
+  .alat-card {
+    width: 90%;
+  }
+
+  .contact .row {
+    flex-direction: column;
+    height: auto; /* hilangkan fixed height agar responsif */
+  }
+
+  .contact .map,
+  .contact .row form {
+    flex: 1 1 100%;
+    height: auto; /* biarkan konten menentukan tinggi */
+  }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
