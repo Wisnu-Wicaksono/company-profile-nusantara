@@ -13,3 +13,29 @@ document.addEventListener('click', function(e) {
         navbarNav.classList.remove('active');
     }
 })
+
+// About Section Start
+<script>
+  const images = [
+    'img/tentang1.png',
+    'img/tentang2.png',
+    'img/tentang3.jpg'
+  ];
+  let currentIndex = 0;
+  const imageElement = document.getElementById('about-image');
+
+  function showImage(index) {
+    imageElement.src = images[index];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+</script>
+// About Section End

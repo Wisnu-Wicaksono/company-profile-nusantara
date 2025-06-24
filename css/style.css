@@ -172,6 +172,42 @@ body {
   display: flex;
 }
 
+.carousel {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+}
+.carousel-btn.left {
+  left: 10px;
+}
+.carousel-btn.right {
+  right: 10px;
+}
+
+img/
+├── tentang1.png
+├── tentang2.png
+└── tentang3.jpg
+
 .about .row .about-img {
   flex: 1 1 50%;
    max-width: 600px;

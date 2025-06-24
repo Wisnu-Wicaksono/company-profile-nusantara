@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Company Profile</title>
+    <title>Nusantara Educatika</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +22,7 @@
   <body>
     <!-- Navbar start -->
     <nav class="navbar">
-      <a href="#" class="navbar-logo">Company<span>Profile</span>.</a>
+      <a href="#" class="navbar-logo">Nusantara<span> Educatika</span></a>
 
       <div class="navbar-nav">
         <a href="#home">Home</a>
@@ -42,27 +42,32 @@
       <main class="content">
         <h1>Ayo beli <span>peralatan sekolah</span></h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, totam.</p>
-        <a href="#" class="cta">Beli Sekarang</a>
+        <a href="https://siplah.tokoladang.co.id/" class="cta">Beli Sekarang</a>
       </main>
      </section>
     <!-- Hero Section End -->
 
-    <!-- About Section Start -->
-    <section id="about" class="about">
-     <h2><span>Tentang</span> Kami</h2>
-     
-     <div class="row">
-      <div class="about-img">
-        <img src="img/tentang-kami.jpg" alt="Tentang Kami">
-      </div>
-      <div class="content">
-        <h3>Kenapa memilih kami</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt excepturi consequatur officia ducimus minima veniam?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et enim eaque, similique nihil amet obcaecati aut hic iste nemo quasi?</p>
-      </div>
-     </div>
-    </section>
-     <!-- About Section End -->
+<!-- About Section Start -->
+<section id="about" class="about">
+  <h2><span>Tentang</span> Kami</h2>
+
+  <div class="row">
+    <!-- Image Carousel -->
+    <div class="about-img carousel">
+      <button class="carousel-btn left" onclick="prevImage()">&#10094;</button>
+      <img id="about-image" src="img/tentang1.png" alt="Tentang Kami">
+      <button class="carousel-btn right" onclick="nextImage()">&#10095;</button>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h3>Kenapa memilih kami</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt excepturi consequatur officia ducimus minima veniam?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et enim eaque, similique nihil amet obcaecati aut hic iste nemo quasi?</p>
+    </div>
+  </div>
+</section>
+<!-- About Section End -->
 
      <!-- Alat Section Start -->
       <section id="alat" class="alat">
@@ -128,15 +133,6 @@
         <li>dll</li>
       </ul>
     </div>
-        <!-- <div class="alat-card">
-      <h3>Dan Masih Banyak Lagi</h3>
-      <ul>
-        <p>Segera Pencet Tombol Beli Sekarang</p>
-      </ul>
-    </div> -->
-    <!-- <div id="alat-card" class="btn-beli-wrapper">
-        <a href="#" class="btn-beli">Beli Sekarang</a>
-    </div> -->
   </div>
 </section>
 
@@ -207,5 +203,32 @@
 
     <!-- My Javascript -->
     <script src="js/script.js"></script>
+
+    // About Section Start
+<script>
+  const images = [
+    'img/tentang1.png',
+    'img/tentang2.png',
+    'img/tentang3.jpg'
+  ];
+  let currentIndex = 0;
+  const imageElement = document.getElementById('about-image');
+
+  function showImage(index) {
+    imageElement.src = images[index];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+</script>
+// About Section End
+
   </body>
 </html>
